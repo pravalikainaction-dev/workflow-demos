@@ -1,0 +1,29 @@
+name: Multiple jobs
+on: push
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+        -  name: install cowsay
+           run: sudo apt install coswsay -y
+
+        -  name: Generate Dragon
+           run: cowsay -f dragon "I am a dragon and breath fire." >> dragon.txt
+
+        -  name: sleep for 30 sec
+           run: sleep 30
+
+        -  name: Show index.html
+           run: cat index.html
+
+    job2:
+        runs-on: unbuntu latest
+        steps:
+        -  name: Show dragon
+           run: ls dragon.txt   
+
+    job3:
+        runs-on: unbuntu latest
+        steps:
+        -  name: Show dragon
+           run: cat dragon.txt   
