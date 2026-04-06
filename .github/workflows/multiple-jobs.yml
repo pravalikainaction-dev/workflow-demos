@@ -17,12 +17,14 @@ jobs:
            run: cat index.html
 
     job2:
+        needs: job1
         runs-on: unbuntu latest
         steps:
         -  name: Show dragon
            run: ls dragon.txt   
 
     job3:
+        needs: job2
         runs-on: unbuntu latest
         steps:
         -  name: Show dragon
