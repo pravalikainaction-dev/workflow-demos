@@ -16,6 +16,9 @@ jobs:
         -  name: Show index.html
            run: cat index.html
 
+        -   name: Install cowsay
+            run: sudo apt install cowsay -y
+
         -  name: create a snake
            run: cowsay -f snake "I am a python"
          
