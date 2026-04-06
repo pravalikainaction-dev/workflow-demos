@@ -16,13 +16,5 @@ jobs:
         -  name: Show index.html
            run: cat index.html
 
-        -   name: Install cowsay
-            run: sudo apt install cowsay -y
-
-        -  name: Create a dragon
-           run: cowsay -f dragon "I am a dragon and breath fire." >> dragon.txt
-           
-        -  name: Show dragon
-           run: cat dragon.txt
-
-           
+        -   name: Execute shell script
+            run: ./myscript.sh
