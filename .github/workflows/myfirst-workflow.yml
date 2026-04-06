@@ -4,12 +4,15 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
-         - name: Welcome message
+        -  name: checkout-repo
+           uses: actions/checkout@v6
+
+        -  name: Welcome message
            run: echo "my first github workflow command"
     
-         - name: List files 
+        -  name: List files 
            run: ls
 
-         - name: Show index.html
+        -  name: Show index.html
            run: cat index.html
          
