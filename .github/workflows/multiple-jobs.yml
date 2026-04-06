@@ -9,9 +9,19 @@ jobs:
 
         -  name: Generate Dragon
            run: cowsay -f dragon "I am a dragon and breath fire." >> dragon.txt
+      
+        -  name: Send the dragon
+           uses: actions/upload-artifact@v4
+           with:
+            name: dragon-file
+            path: dragon.txt
 
         -  name: sleep for 30 sec
            run: sleep 30
+        -  name: call the dragon
+           uses: actions/download-artifact@v8
+           with:
+            name: dragon-file
 
         -  name: Show index.html
            run: cat index.html
@@ -27,5 +37,12 @@ jobs:
         needs: job2
         runs-on: unbuntu latest
         steps:
-        -  name: Show dragon
-           run: cat dragon.txt   
+         
+         -  name: call the dragon
+            uses: actions/download-artifact@v8
+            with:
+             name: dragon-file
+
+         -  name: Show dragon
+            run: ls dragon.txt
+      
