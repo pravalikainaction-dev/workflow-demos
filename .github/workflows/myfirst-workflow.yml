@@ -19,6 +19,10 @@ jobs:
         -   name: Install cowsay
             run: sudo apt install cowsay -y
 
-        -  name: create a snake
-           run: cowsay -f snake "I am a python"
-         
+        -  name: Create a dragon
+           run: cowsay -f dragon "I am a dragon and breath fire." >> dragon.txt
+           
+        -  name: Show dragon
+           run: cat dragon.txt
+
+           
